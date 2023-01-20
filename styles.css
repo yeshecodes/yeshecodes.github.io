@@ -1,5 +1,10 @@
 main {
     padding: 12px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.topnav {
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .card {
