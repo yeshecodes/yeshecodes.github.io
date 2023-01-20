@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yeshecodes: RootME</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main>
+      <div class="topnav">
+        <a href="/index.html">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/ctfwriteups.html">CTF Writeups</a>
+        <a href="/about.html" class="split">About</a>
+      </div>
+      <h1>RootMe</h1>
+      <p>I’m Yeshecodes and this is my write-up for the RootMe box on TryHackMe. I am not going to ruin the experience by giving you the answers, I will walk you through the steps.
+
+</p>
+
+      <img src="/writeups/images/rootme1.png" height="100%" width="100%">
+      <h4>        1. Scan the machine with:
+        
+        nmap target_ip</h4><img src="/writeups/images/rootme2.png" height="100%" width="100%"><p>nmap target_ip -p 80 -sV -A
+        </p><img src="/writeups/images/rootme3.png" height="100%" width="100%"><p>Enumerate directories: dirb http://target_ip /usr/share/wordlists/dirb/common.txt
+          
+          Navigate to hidden path</p><img src="/writeups/images/rootme4.png" height="100%" width="100%"><p>3. Upload php payload (I used pentestmonkey github php payload)
+
+            change ip to your machine_ip
+            Save with filename.phtml
+            
+            4. Start a listener
+            
+            nc -lvnp chosen_port</p><img src="/writeups/images/rootme5.png" height="100%" width="100%"><p>5. Navigate to target_ip/uploads/[filename]
+
+              6. You have a shell!</p><img src="/writeups/images/rootme6.png" height="100%" width="100%"><p>Search for file
+
+                find / | grep -w "user.txt"
+                
+                cat [path]/user.txt
+                
+                Search for SUID files
+                
+                find / -user root -perm /4000
+                
+                found the file!
+                
+                usr/bin/python
+                
+                navigate to gtfobins https://gtfobins.github.io/ 
+                </p><img src="/writeups/images/rootme7.png" height="100%" width="100%"><p>search python [SUID]
+
+                  I only used the 2nd line.</p><img src="/writeups/images/rootme8.png" height="100%" width="100%">
+      <p>search file
+
+        find / | grep -w "root.txt"
+        
+        cat [path]/root.txt</p>
+    </main>
+  </body>
+</html>
