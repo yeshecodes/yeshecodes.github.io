@@ -140,3 +140,7 @@ img {
   color: white;
   transform: rotateY(180deg);
 }
+
+.project-links {
+  margin-bottom: 20px;
+}
