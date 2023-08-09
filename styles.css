@@ -1,8 +1,12 @@
-main,p {
+main {
     padding: 14px;
     font-family: "Lucida Console", "Courier New", monospace;
     margin: auto;
     text-align: center;
+}
+
+p {
+    font-size: 14px;
 }
 
 .topnav {
