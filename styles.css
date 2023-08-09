@@ -1,5 +1,5 @@
-main {
-    padding: 12px;
+main,p {
+    padding: 14px;
     font-family: "Lucida Console", "Courier New", monospace;
     margin: auto;
     text-align: center;
