@@ -20,10 +20,12 @@
             margin: 0;
         }
 
+        /* 1. Container - Responsive Padding */
         .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* Prevents padding from breaking width */
         }
 
         .section-title {
@@ -94,6 +96,8 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            flex-wrap: wrap; /* Allows links to wrap on small screens */
+            padding: 1rem;
         }
 
         .nav-logo {
@@ -137,6 +141,48 @@
             box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
             border-radius: 5px;
             margin: 20px 0;
+        }
+
+        /* 3. The Toolkit Grid - Mobile First */
+        .grid {
+            display: grid;
+            /* On mobile: 1 column. On tablets+: 2 columns. On desktop: 3 columns */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        /* 4. Responsive Media Queries */
+        @media (max-width: 768px) {
+            .glitch {
+                font-size: 2rem; /* Smaller title for mobile */
+                letter-spacing: 2px;
+            }
+        
+            header {
+                height: 40vh; /* Shorter header on mobile */
+            }
+        
+            .nav-links {
+                width: 100%;
+                justify-content: space-around;
+                margin-top: 15px;
+                font-size: 0.8rem;
+            }
+        
+            .timeline::after {
+                left: 31px; /* Move timeline line to the left on mobile */
+            }
+        
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left; /* No more alternating text on small screens */
+            }
+        
+            .timeline-item.left, .timeline-item.right {
+                left: 0;
+            }
         }
     </style>
 </head>
@@ -234,3 +280,4 @@
 </body>
 
 </html>
+
