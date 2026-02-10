@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSCP Journey | PwnProphet</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-color: #00ff41; 
+            --text-color: #e0e0e0;
+            --card-bg: #161616;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Timeline Styling */
+        .timeline {
+            border-left: 2px solid #333;
+            margin: 20px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -39px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: var(--bg-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #333;
+        }
+
+        .status-box {
+            border: 1px dashed var(--accent-color);
+            padding: 20px;
+            text-align: center;
+            margin: 40px 0;
+            background: rgba(0, 255, 65, 0.05);
+        }
+
+        .back-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .highlight { color: var(--accent-color); font-weight: bold; }
+
+                /* Navigation Bar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-bottom: 2px solid var(--accent-color);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-logo {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::before {
+            content: "> ";
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover::before {
+            opacity: 1;
+        }
+        .profile-img {
+            width: 300px;
+            height: auto;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <a href="index.html" class="nav-logo">YESHECODES //</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="oscp.html">OSCP_Journey</a>
+        <a href="writeups.html">Writeups</a>
+        <a href="https://linkedin.com/in/yeshecodes" target="_blank" style="color: #0077b5;">
+        <i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+</nav>
+<div class="container">
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> root@portfolio:~# cd ..</a>
+    
+    <h1 class="section-title">Log: OSCP_Certification_Journey</h1>
+    <p>In 2024, after completing my <span class="highlight">MSc in Computer Science and Cybersecurity</span> I decided to pursue the <span class="highlight"></span>OSCP</span>. My MsC provided the theoretical foundation. <span class="highlight">OSCP</span> was the crucible that tested my practical endurance.</p>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="card">
+                <h3>Context</h3>
+                <p>I started with IT familiarity.</p>
+                <br>• <span class="highlight">Hobbyist MERN full stack developer:</span> I had 3-4 years of hobbyist experience building non-pro websites.
+                <br>• <span class="highlight">Certs earned between 2021 and 2026:</span> - Not an ordered or complete list - Cyber Scheme CSTM, MSc Computer Science & Cybersecurity, Comptia Pentest+, Cyber Scheme VA+ ...CWL AD Red Team Specialist, CWL Certified Web Red Team Analyst, INE Certified Junior & Professional Penetration Tester... 
+                <br>• <span class="highlight">IT professional:</span> Spent time in Cybersecurity, IT support, System administrator roles. 
+                <br>• <span class="highlight">Self-motivated:</span> I generally enjoy earning certs, taking courses and have always enjoyed IT, Computer Science, Cybersecurity hence my MsC.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="card">
+                <h3>Resources and Subscriptions</h3>
+                <p>I find it slightly difficult to recommend the best path for others. Enjoy the journey and the certifications will come. It is less about a single resource and consistently doing something each day and practicing specific skills.</p>
+                <br>• <span class="highlight">Tryhackme:</span> This was my initial resource for learning the core penetration testing concepts in a structured and gamified manner. I completed several learning paths, the courses are interactive and the labs are engaging.
+                <br>• <span class="highlight">Hackthebox:</span> This was my step-up into the CPTS course, and the other HTB labs which is a bit more training wheels off. I also competed in seasons 7 earning the following ranks (Silver), 8 (Ruby), 9 (Ruby) of HTB Seasons.
+                <br>• <span class="highlight">Proving Grounds:</span> This was my final resource. I worked through 30-40 boxes using Lain's list
+                <br>• <span class="highlight">Videos:</span> IPPsec and TJNull walkthrough's
+                <br>• <span class="highlight">List</span> Lain's list
+                
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="card">
+                <h3>0x01: The Lab Phase</h3>
+                <p>I purchase the 90 day bundle which included 1 exam attempt. I balanced my full-time cybersecurity role and learning with labs, I studied the course material and worked through the practice labs</p>
+                <br>• <span class="highlight">A few hours a day:</span> I took the odd day off. However I was generally consistent about having a lab on the go each day.
+                <br>• <span class="highlight">Notes:</span> I took notes. I used cherrytree and switch to Obsidian and using both.
+                <br>• <span class="highlight">Smaller certs:</span> I sought out opportunities to benchmark against, so I made use of very affordable courses with an exam component, especially CWL, Pentesting Exams (Secops) etc.
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="card">
+                <h3>0x02: Hills and valleys</h3>
+                <p>Failed at first. I thought it best not to stress too much. I would study harder and return for another try. Overall the cooling-off period helped me improve. </p>
+                   <br>• <span class="highlight">Yes, I failed at first</span> My preparation was not good enough, my time management, skills and performance were not at the required level.
+                   <br>• <span class="highlight">I still submitted the failing report</span> I figured it was good practice and validated my reporting approach.
+                   <br>• <span class="highlight">Back to the drawing board</span> I signed up for Proving Grounds labs and spent more time learning and purchased another exam voucher. 
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="card">
+                <h3>0x03: The passing Exam</h3>
+                <p>I started around midday. I would hack for 2-3 hours and then take short 15 minute breaks. Those helped alot to breathe, drink water and think.
+                   <br>• <span class="highlight">Fully completed AD Set:</span> Completed all AD flags by the 4th hour.
+                   <br>• <span class="highlight">Rooted 1st standalone:</span> Completed this by the 6th hour.
+                   <br>• <span class="highlight">Foothold on 2nd standalone:</span> Foothold flag by the 9th hour
+                <p>I had earned enough points to pass, so I began taking vigorous screenshots and building my report notes and went to sleep.</p>
+                   <br>• <span class="highlight">Foothold on 3rd standalone:</span> Foothold flag with 3 hours remaining</p>
+                <p>I had earned over the requirement. I double and triple checked my notes, screenshots, control panel submissions and ended the exam.</p>
+
+
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="card">
+                <h3>0x04: Professional Reporting</h3>
+                <br>• <span class="highlight">Take a break:</span> I slept and refreshed before report writing.
+                <p>I had already written my report during the exam. It was a matter of putting it onto the official template. This did take me a while to double and triple check.<span class="highlight"> Submitted the report</span> I submitted about 14 hours after the exam ended <span class="highlight">Waited...:</span> then suddenly, success!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="status-box">
+        <h2 style="margin: 0;">The result</h2>
+        <p style="color: var(--accent-color); font-weight: bold;">STATUS: OFFSEC CERTIFIED PROFESSIONAL</p>
+
+        <img src="digital-george-dragon.jpg" alt="Dragon slayer" class="profile-img">
+    </div>
+        
+    </section>
+</div>
+
+</body>
+</html>
