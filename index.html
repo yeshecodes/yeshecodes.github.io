@@ -5,67 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yeshecodes | Cyberecurity Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+Here is the complete, rewritten code. I have structured this using Mobile-First logic: the core styles target small screens by default, and a @media query at the bottom handles the expansion for desktops.
+
+I also merged your redundant nav and .navbar styles into one cohesive system and fixed a typo in your title (Cyberecurity to Cybersecurity).
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #0a0a0a;
             --accent-color: #00ff41; /* Classic Matrix Green */
             --text-color: #e0e0e0;
             --card-bg: #161616;
+            --font-main: 'Courier New', Courier, monospace;
         }
 
+        /* --- BASE MOBILE STYLES --- */
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: var(--font-main);
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
+        /* Header / Hero */
         header {
-            height: 60vh;
+            height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
             border-bottom: 1px solid var(--accent-color);
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80');
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80');
             background-size: cover;
+            background-position: center;
+            padding: 0 1rem;
         }
 
         .glitch {
-            font-size: 3rem;
+            font-size: 1.8rem; /* Smaller for mobile */
             font-weight: bold;
             text-transform: uppercase;
             color: var(--accent-color);
-            letter-spacing: 5px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px #000;
         }
 
-        nav {
+        /* Navigation */
+        .navbar {
             display: flex;
-            justify-content: center;
-            background: var(--card-bg);
+            flex-direction: column; /* Stacked for mobile */
+            align-items: center;
+            background-color: var(--card-bg);
+            border-bottom: 2px solid var(--accent-color);
             padding: 1rem;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            gap: 10px;
         }
 
-        nav a {
-            color: var(--text-color);
-            margin: 0 15px;
-            text-decoration: none;
+        .nav-logo {
+            color: var(--accent-color);
             font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            letter-spacing: 2px;
         }
 
-        nav a:hover {
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
             color: var(--accent-color);
         }
 
+        /* Content Container */
         .container {
-            max-width: 900px;
-            margin: 2rem auto;
+            width: 100%;
+            max-width: 100%;
+            margin: 1.5rem auto;
             padding: 0 20px;
+            box-sizing: border-box;
         }
 
         .section-title {
@@ -73,12 +116,14 @@
             border-left: 4px solid var(--accent-color);
             padding-left: 10px;
             margin-bottom: 20px;
+            font-size: 1.2rem;
         }
 
+        /* Grid System */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr; /* Single column for mobile */
+            gap: 15px;
         }
 
         .card {
@@ -86,76 +131,74 @@
             padding: 20px;
             border-radius: 5px;
             border: 1px solid #333;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
+            transition: all 0.3s ease;
         }
 
         .tag {
+            display: inline-block;
             background: #222;
             color: var(--accent-color);
-            padding: 3px 8px;
-            font-size: 0.8rem;
+            padding: 2px 8px;
+            font-size: 0.75rem;
             border-radius: 3px;
-            margin-right: 5px;
+            margin: 5px 5px 0 0;
         }
 
         footer {
             text-align: center;
-            padding: 3rem;
-            font-size: 0.8rem;
+            padding: 2rem 1rem;
+            font-size: 0.75rem;
             opacity: 0.6;
         }
-        /* Navigation Bar Styling */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--card-bg);
-            border-bottom: 2px solid var(--accent-color);
-            padding: 0.8rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
 
-        .nav-logo {
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
+        /* --- TABLET & DESKTOP (Min-width 768px) --- */
+        @media (min-width: 768px) {
+            header {
+                height: 60vh;
+            }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
+            .glitch {
+                font-size: 3.5rem;
+                letter-spacing: 6px;
+            }
 
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0.8rem 3rem;
+            }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-color);
-        }
+            .nav-links {
+                gap: 30px;
+            }
 
-        .nav-links a::before {
-            content: "> ";
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+            .nav-links a {
+                font-size: 0.95rem;
+            }
 
-        .nav-links a:hover::before {
-            opacity: 1;
+            .nav-links a::before {
+                content: "> ";
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .nav-links a:hover::before {
+                opacity: 1;
+            }
+
+            .container {
+                max-width: 1000px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .card:hover {
+                border-color: var(--accent-color);
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 255, 65, 0.1);
+            }
         }
     </style>
 </head>
@@ -260,3 +303,4 @@
 
 </body>
 </html>
+
